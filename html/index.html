@@ -5,7 +5,7 @@
     <title>Apresentação</title>
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/jquery.mousewheel-min.js"></script>
-    <script src="js/jquery.terminal-min.js"></script>
+    <script src="js/jquery.terminal-0.8.8.min.js"></script>
     <script src="js/howler.js"></script>
     <script>
 
@@ -84,7 +84,7 @@
                 cmd = cmd.split(" ")[0];
                 if (cmd.length<3 || !isNaN(cmd)){
                     SomDeError.play();
-                    term.echo("[[bg;red]Entrada inválida]");
+                    term.echo("Entrada inválida");
                     return false;
                 }
                 if (nome == ""){
