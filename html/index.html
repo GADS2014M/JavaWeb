@@ -84,11 +84,7 @@
                 cmd = cmd.split(" ")[0];
                 if (cmd.length<3 || !isNaN(cmd)){
                     SomDeError.play();
-                    term.echo("Entrada inválida", {
-                        finalize: function (div) {
-                            div.css("color", "red");
-                        }
-                    });
+                    term.echo("[[bg;red]Entrada inválida]");
                     return false;
                 }
                 if (nome == ""){
