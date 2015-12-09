@@ -271,9 +271,6 @@ var data = {
         },
         {
             "name":"marcus vinícius"
-        },
-        {
-            "name":"ariel faria"
         }
     ]
 };

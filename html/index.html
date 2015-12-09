@@ -1,3 +1,9 @@
+<!--
+BEM VINDO !
+Calma... não é flash
+GitHub: https://github.com/isvaldo/Ola_Bemobenses
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +17,12 @@
 
         /**
          * HowL Trata a compatibilidade entre navegadores da API de Audio
+         *
+         * A ideia era fazer tudo nativo, começou a aparecer muitos problemas
+         * então utilizei essa lib
+         *
+         * Segue a discução que abri sobre o problema que tive ...
+         * http://pt.stackoverflow.com/questions/102533/problema-de-compatibilidade-com-%C3%A1udio-api-firefox/102538#102538
          * @type {*|Howl}
          */
         var SomDeDigito = new Howl({
@@ -40,7 +52,7 @@
         var anim = false; // Quando tem animação, o teclado fica desabilitado
 
         console.log("UM DESENVOLVEDOR !!!");
-        console.log("Fique tranquilo, não é flash");
+        console.log("Fique tranquilo, não é flash!!");
         console.log("Achou bug's ? Reporte para mim por favor: https://github.com/isvaldo/Ola_Bemobenses");
 
     </script>
@@ -77,7 +89,7 @@
              * por comando... cada metodo funciona como um comando
              */
             var nome="";
-            $('#terminal').terminal(function(cmd, term) {
+            $('#terminal').terminal(function(cmd, term,altinput) {
 
                 //filtra/formata a entrada
                 cmd = cmd.toLowerCase();
@@ -94,8 +106,13 @@
                 //Compartilha o nome pelo contexto
                 // pode ser acessado de qualquer parte do escopo agora
                term['usuario'] = nome;
-                //Comandos
 
+
+                /**
+                 * Bloco de comandos
+                 * você pode encontrar toda a implementação
+                 * no arquivo cenario.js
+                 */
                     switch (cmd){
                         case "play":
 
@@ -108,7 +125,7 @@
                             pessoal(term);
                             break;
                         case "motivacao":
-                            movivacao(term);
+                            motivacao(term);
                             break;
                         case  "conhecimento":
                             conhecimento(term);
@@ -132,6 +149,7 @@
             }, {
                 name: 'apresentacao',
                 greetings: null,
+                altinput: true, // Unica esperança de funcionar no android
                 width: 800,
                 height: 300,
                 onInit: function(term) {
